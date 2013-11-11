@@ -1,3 +1,6 @@
-connection_speed,prod_qty,zip_code,basket_tot,event_time,hoh_oldest_age,domain_name,prod_category_id,prod_totprice,racial_background,country_of_origin,children,census_region,household_income,household_size,hoh_most_education,event_date,machine_id,domain_id,prod_name,site_session_id
-1,1,14850,299.99,4:32:27,3,amazon.com,25,299.99,3,0,0,1,3,3,99,20120331,97969694,4046669681622005860,"IROBOT 530 ROOMBA VACUUMING ROBOT, WHITE N/A",76019011031418
-1,1,89118,512.35,18:24:30,9,amazon.com,25,475.20,1,0,1,4,7,2,99,20120329,1.044E8,4046669681622005860,JUNIPER NETWORKS SSG-5-SH-US - 7 PORT - 256MB FIREWALL SECURITY APPLIANCE N/A,79061001703800
+Household Income,Household Size,Census Region,Product Total Price,Connection Speed,Children Present,Domain ID,Basket Total,Machine Identifier,Zip Code,product Quantity,Product Category ID,Date of Activity,Domain Name,Product Name,Racial Background,Most Education -- Head of Household,Site Session ID,Time of Activity,Country of Origin,Oldest Age -- Head of Household
+2,2,2,616.7,1,1,4.04667E+18,808.63,95717169,68005,1,25,20120111,amazon.com,LENOVO H330 77801PU SLIM DESKTOP (BLACK) N/A,1,99,7.35771E+13,4:14:49,0,8
+2,2,2,1235.25,1,1,4.04667E+18,1415.14,95717169,68005,1,25,20120112,amazon.com,LENOVO B520 77452FU TOUCHSCREEN ALL-IN-ONE 23-INCH DESKTOP (BLACK) N/A,1,99,7.46813E+13,2:41:38,0,8
+2,2,2,845,1,1,4.04667E+18,972.91,95717169,68005,1,25,20120112,amazon.com,LENOVO K330B 77471QU DESKTOP (BLACK) N/A,1,99,7.46813E+13,2:41:38,0,8
+3,3,1,299.99,1,0,4.04667E+18,299.99,97969694,14850,1,25,20120331,amazon.com,"IROBOT 530 ROOMBA VACUUMING ROBOT, WHITE N/A",3,99,7.6019E+13,4:32:27,0,3
+1,1,4,504.16,1,0,4.04667E+18,571.15,99884110,81226,1,25,20120116,amazon.com,LENOVO H330 77801NU SLIM DESKTOP (BLACK) N/A,1,99,7.69087E+13,19:42:43,0,11
