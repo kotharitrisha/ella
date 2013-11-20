@@ -1,0 +1,190 @@
+<html>
+  <head>
+	<style>
+		#map { width:100%; height:100%; }
+        .label { 
+			position: relative; 
+			left: -50%; top: -8px; 
+			white-space: nowrap; 
+			color: white; font: tahoma; 
+			font-size:10pt; z-index:1000; 
+			text-shadow: 1px 1px 10px #000;  
+		}
+	</style>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script> 
+    <script type="text/javascript">
+	
+	var dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHhyN3NnWUVOTE5RZVR3cjZfYzRNVEE";
+	
+	google.load("visualization", "1");
+	google.load("maps", "3", {other_params:"sensor=false"});
+	
+	function updateMap(selectControl)   {
+        // alert(selectControl);
+        switch(selectControl)
+        {
+			case 'cat1':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHhyN3NnWUVOTE5RZVR3cjZfYzRNVEE";
+			  break;
+			  
+			case 'cat2':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHIzRTd1X3ZLeXJkclRreUNubzBjb3c";
+			  break;
+			
+			case 'cat3':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGxJcE1jNE1EYTZaN2MweVJiUnY5Unc";
+			  break;
+			
+			case 'cat4':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdEtsdkZNUGJROVl6SV9aa3dnbGdzWVE";
+			  break;
+			  
+			case 'cat5':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHNPTl90V2ZvYl9JU2Jxb1l6TWFDOHc";
+			  break;
+			
+			case 'cat6':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGJJZmkwVUMtMnZGc1l6Rjd6X1BpMUE";
+			  break;
+			  
+			case 'cat7':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHZJRWdxbldqRWN2N2Q3U0Qtdjk3SkE";
+			  break;
+			  
+			case 'cat8':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdFZOMnZRQVA2d1J1VGFqbmtSeTFUcmc";
+			  break;
+			
+			case 'cat9':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdDRFeVlKam8tUTF6TUI4YndLd1BOWmc";
+			  break;
+			
+			case 'cat10':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHdtQXkxSUpZMVU4U3ctbHl5SDZudnc";
+			  break;
+			  
+			case 'cat11':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdDBBWllfaUhFa3BSNW9EVk1TWTU4aHc";
+			  break;
+			
+			case 'cat12':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHNDUjAtek5FcVNZSGNaWVl5UVR6LXc";
+			  break;  
+			  
+			case 'cat13':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGRSWVBPdFh6UVVHc2llUmVFMjByYUE";
+			  break;
+			
+			case 'cat14':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdDh3S1lpdTlJakhWX3l6ZDc0MXk0M0E";
+			  break;
+			  
+			case 'cat15':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGhzWl9lXzlkR1lXM1dYc21FTDBPbUE";
+			  break;
+			
+			case 'cat16':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGlpLUNPaXlRSl8tMEJfLUtXRTl6TWc";
+			  break;  
+			  
+			case 'cat17':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdFZHcEZYcFVqaXZyTEE3WEMwR3FfV3c";
+			  break;  
+			  
+			case 'cat18':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdGxoWU9WOExYa0xKV1RJRGwybVdVSlE";
+			  break;
+			
+			case 'cat19':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdEw0THh3b29KVnpGNVBlejctX2ZzZVE";
+			  break;
+			  
+			case 'cat20':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdHlGWTQ2SjNURkw5TlFZX2V2WC1sSlE";
+			  break;
+			
+			case 'cat21':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdEhsSm5ycl8zYmZCOHFETFFyaXRkWXc";
+			  break;    
+			  
+			case 'cat22':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdDFwZEFzUmxGTUpRb3BNMnpTT2NpdHc";
+			  break;
+			
+			case 'cat23':
+			  dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AtipI-68EK2VdDlxR1NucU9ZNzhaeHVhZWlTd0s5QWc";
+			  break;      
+			  
+			default: dataSourceUrl = "https://docs.google.com/spreadsheet/ccc?key=0AhgSXJRgMrNrdEotaW01bGlLV0swQnpwWkpVSThGUnc#gid=0";
+			
+		}
+		//alert(dataSourceUrl);
+		getData();
+	}
+				
+		google.setOnLoadCallback(getData);
+		
+		function getData() {
+			var query = new google.visualization.Query(dataSourceUrl);
+			query.send(handleQueryResponse);
+		}
+				
+		//Initialization Function
+		function handleQueryResponse(response) {
+			if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+			}
+
+			var data = response.getDataTable();
+            
+            var mapping = {
+				disableDefaultUI:true,
+				scrollWheel:true,
+				zoom: 4,
+				center: new google.maps.LatLng(39.50, -98.35),
+				mapTypeId: google.maps.MapTypeId.SATELLITE
+			};
+
+			var map = new google.maps.Map(document.getElementById("map"), mapping);
+			var bubbleMap = new Bubble(data);		
+			
+			bubbleMap.setMap(map);
+		}
+	
+	</script>	
+	
+	<title>Custom Overlay: Ella</title></head>
+	
+  <body>
+  
+  	<select name="cat" onchange="updateMap(this.options[this.selectedIndex].value)">
+	  <option value="cat1">Product Category 1 - Apparel</option>
+	  <option value="cat2">Product Category 13 - Food & Beverage</option>
+	  <option value="cat3">Product Category 14 - Automotive Accessories</option>
+	  <option value="cat4">Product Category 15 - Sport & Fitness</option>
+	  <option value="cat5">Product Category 17 - Art & Collectibles</option>
+	  <option value="cat6">Product Category 19 - Baby Supplies</option>
+	  <option value="cat7">Product Category 20 - Home & Living</option>
+	  <option value="cat8">Product Category 21 - Books & Magazines</option>
+	  <option value="cat9">Product Category 22 - Music</option>
+	  <option value="cat10">Product Category 23 - Movies & Videos</option>
+	  <option value="cat11">Product Category 28 - Printers, Monitors & Peripherals</option>
+	  <option value="cat12">Product Category 29 - Computer Software</option>
+	   <option value="cat13">Product Category 30 - Other Computer Supplies</option>
+	  <option value="cat14">Product Category 31 - Audio Video Equipment</option>
+	  <option value="cat15">Product Category 36 - Video Games</option>
+	  <option value="cat16">Product Category 37 - Video Game Consoles, Accessories</option>
+	    <option value="cat17">Product Category 4 - Jewelry & Watches</option>
+	   <option value="cat18">Product Category 40 - Office Supplies</option>
+	  <option value="cat19">Product Category 48 - Online Content</option>
+	  <option value="cat20">Product Category 54 - Toys & Games</option>
+	  <option value="cat21">Product Category 9 - Kitchen & Dining</option> 
+	  <option value="cat22">Product Category 99 - Unclassified</option>
+	  <option value="cat23">All Categories</option>
+	</select>
+	<script type="text/javascript" src="overlay_bubble.js"></script>
+    <div id="map"></div>
+	
+  </body>  
+</html>
